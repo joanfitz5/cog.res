@@ -1,1 +1,26 @@
+library ('devtools')
+library ('GenomicSEM')
+traits <- c("RV.sumstats.gz", "V.sumstats.gz")
+sample.prev <- c(.50,.50)
+population.prev <- NA
+ld <- "eur_w_ld_chr/"
+wld <- "eur_w_ld_chr/"
+trait.names<-c("RV", "V")
+LDSCoutput <- ldsc(traits=traits, sample.prev=sample.prev, population.prev=population.prev, ld=ld, wld=wld, trait.names=trait.names)
+
+model<-'var=~NA*RV+start(0.4)*V
+
+res=~NA*RV
+
+
+res~~1*res
+var~~1*var
+var~~0*res
+
+V ~~ 0*RV
+V~~0*V
+RV~~0*RV'
+
+output<-usermodel(LDSCoutput,estimation="DWLS",model=model)
+saveRDS(output, file="model" )
 
