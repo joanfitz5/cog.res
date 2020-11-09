@@ -3,6 +3,7 @@ for GWAS by subtraction
 library ('devtools')
 library ('GenomicSEM')
 munge("all.res.txt", "hm3.txt",trait.names=("RV"),N=156011)
+# repeat for all GWAS ouputs (all, test and replication)
 
 
 Script
