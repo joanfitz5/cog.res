@@ -1,1 +1,1 @@
-
+./plink2 --bfile cogres --glm hide-covar --pheno res.pheno.txt --covar impute.age.cov  --covar-variance-standardize --chr 4  --condition rs2189234 --out 4.rs2189234
