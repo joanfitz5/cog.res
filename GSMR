@@ -1,1 +1,1 @@
-
+./gcta64 --bfile cogres --gsmr-file gsmr_exposure.all.txt gsmr.outcomeint.txt --gsmr-direction 2 --gsmr-snp-min 8 --heidi-thresh 0.01 --out res.int.gsmr_result
