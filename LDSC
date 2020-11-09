@@ -1,1 +1,11 @@
+library ('devtools')
+library ('GenomicSEM')
+traits <- c("recall.sumstats.gz", "EY.sumstats.gz")
+sample.prev <- c(NA,NA)
+population.prev <- c(NA,NA)
+ld <- "eur_w_ld_chr/"
+wld <- "eur_w_ld_chr/"
+trait.names<-c("recall", "EY")
+LDSCoutput <- ldsc(traits=traits, sample.prev=sample.prev, population.prev=population.prev, ld=ld, wld=wld, trait.names=trait.names)
+save(LDSCoutput, file = "EY.recall.int.ldsc.rdata")
 
