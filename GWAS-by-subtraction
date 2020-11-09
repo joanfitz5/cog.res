@@ -1,1 +1,76 @@
+for GWAS by subtraction
+#first creat munge files from GWAS outputs
+library ('devtools')
+library ('GenomicSEM')
+munge("all.res.txt", "hm3.txt",trait.names=("RV"),N=156011)
 
+
+Script
+#SBATCH --job-name="GBS"
+#SBATCH --output=GBS1_%a.out
+#SBATCH -a 1-22
+#SBATCH -n 16
+#SBATCH -p highmem
+#SBATCH -x compute[01-03]
+
+## CMD here
+
+Rscript gbs.newall.txt RV.${SLURM_ARRAY_TASK_ID}.sumstats V.${SLURM_ARRAY_TASK_ID}.sumstats ${SLURM_ARRAY_TASK_ID}
+ 
+# gbs.newall.txt
+
+ #cat gbs.newall.txt
+library ('devtools')
+library ('GenomicSEM')
+args = commandArgs(trailingOnly=TRUE)
+
+files = c(args[1],args[2])
+
+ref = "UKB.reference"
+trait.names = c("RV","V")
+se.logit = c(F,F)
+info.filter = 0.9
+maf.filter = 0.001
+
+p_sumstats<-sumstats(files, ref, trait.names, se.logit, info.filter, maf.filter, OLS=c(T,T),linprob=NULL, prop=NULL, N=c(156011,174086),cores=16)
+#save(p_sumstats, file="Sumstatsres.RData")
+
+traits <- c("RV.sumstats.gz", "V.sumstats.gz")
+sample.prev <- c(.50,.50)
+population.prev <- c(NA,NA)
+ld<-"eur_w_ld_chr/"
+wld <- "eur_w_ld_chr/"
+trait.names<-c("R", "V")
+
+LDSCoutput <- ldsc(traits,
+                   sample.prev,
+                   population.prev,
+                   ld,
+                   wld,
+                   trait.names)
+#save(LDSCoutput, file="LDSCoutputres.RData")
+model<-'var=~NA*RV +start(0.2)*RV +start(0.5)*V
+res=~NA*RV +start(0.2)*RV
+
+var~SNP
+res~SNP
+
+res~~1*res
+var~~1*var
+var~~0*res
+
+V ~~ 0*RV
+V~~0*V
+RV~~0*RV
+SNP~~SNP'
+
+#Run the Genomic SEM GWAS
+outputGWAS<-userGWAS(covstruc=LDSCoutput,SNPs=p_sumstats,estimation="DWLS",model=model,sub =c("var~SNP","res~SNP"),cores=16, printwarn = FALSE)
+
+save(outputGWAS, file=paste("alla.",args[3],".RData",sep=""))
+write.table(outputGWAS, file=paste("all.",args[3],".out",sep=""), row.names=F,quote=F)
+# for RV read EY+Res and for V read EY/NonRes
+# for res read Resilience and for var read EduYears
+# to creat munge files 
+
+# analysis repeated for all, test and replic GWAS 
