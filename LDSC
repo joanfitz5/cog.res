@@ -1,14 +1,18 @@
+# to examine generatic correlations between my diffenrent GWAS and exteral traits , I created munge files for each parameter to be examined -x.sumstats.gz and performed LDSC in 
+# genomicSEM.
+
 library ('devtools')
 library ('GenomicSEM')
-traits <- c("recall.sumstats.gz", "EY.sumstats.gz")
+traits <- c("res.sumstats.gz", "EY.sumstats.gz")
 sample.prev <- c(NA,NA)
 population.prev <- c(NA,NA)
 ld <- "eur_w_ld_chr/"
 wld <- "eur_w_ld_chr/"
-trait.names<-c("recall", "EY")
+trait.names<-c("res", "EY")
 LDSCoutput <- ldsc(traits=traits, sample.prev=sample.prev, population.prev=population.prev, ld=ld, wld=wld, trait.names=trait.names)
-save(LDSCoutput, file = "EY.recall.int.ldsc.rdata")
+save(LDSCoutput, file = "EY.res.EY.ldsc.rdata")
 
+ #example output
  cat ldsc.res.0207.out
 
 [1] "Multivariate ld-score regression of 2 traits (res.sumstats.gz 0207z.sumstats.gz) began at: 2020-10-05 09:25:29"
@@ -57,3 +61,7 @@ save(LDSCoutput, file = "EY.recall.int.ldsc.rdata")
 [1] "Genetic Correlation between res and 0207: 0.1597 (0.0473)"
 [1] "LDSC finished running at 2020-10-05 09:26:41"
 [1] "Running LDSC for all files took 1 minutes and 12.5871486663818 seconds"
+
+# imaging data was downloaded at  https://open.win.ox.ac.uk/ukbiobank/big40/ which is a GWAS atlas of all imaging phenotypes. 
+# note that these files are all in the direction of the A2 allele so the beta values need to be reversed
+# note that the p values are -log10 and need to be convereted. 
