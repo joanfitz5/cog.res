@@ -1,1 +1,22 @@
-./gcta64 --bfile cogres --gsmr-file gsmr_exposure.all.txt gsmr.outcomeint.txt --gsmr-direction 2 --gsmr-snp-min 8 --heidi-thresh 0.01 --out res.int.gsmr_result
+# https://cnsgenomics.com/software/gcta/#Overview 
+
+# I used the GSMR function in GCTA - not the R version
+
+Need to creat an exposure and outcome file.
+
+as follows:
+
+# exposure file - gsmr_exposure.all.txt
+  res gsmr.res
+  
+ # outcome file - gsmr.outcomeSCZ.txt  
+  SCZ SCZ.glA.txt
+
+
+./gcta64 --bfile cogres --gsmr-file gsmr_exposure.all.txt gsmr.outcomeSCZ.txt --gsmr-direction 2 --heidi-thresh 0.01 --out res.SCZ.gsmr_result
+
+# need independent data sets so for imaging I used the test ( discovery) GWAS for Resilience as this did not contain any participants used for imaging
+
+# all the number of loci was low in the test GWAS I changed the default paramaeter for minimum loci from 10 to 8 --gsmr-snp-min 8
+
+./gcta64 --bfile cogres --gsmr-file gsmr_exposure.all.txt gsmr.outcome0207.txt --gsmr-direction 2 --gsmr-snp-min 8 --heidi-thresh 0.01 --out res.0207.gsmr_result
