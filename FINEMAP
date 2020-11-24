@@ -1,7 +1,7 @@
 # go to Benner http://www.christianbenner.com for method
 
 #Step 1 create a LD and z files for each locus
-#6f.z was created from list of candidated GWAS SNPs in FUMA pertaininf to chr 6. 
+#6f.z was created from list of candidated GWAS SNPs in FUMA pertaining to chr 6. 
 #Essential to sort by position - if not I got inconsistent results
 
 (base) [joanf@lugh finemap_v1.4_x86_64]$ head 6f.z
