@@ -1,4 +1,10 @@
-for GWAS by subtraction
+References:
+GenomicSEM: https://github.com/MichelNivard/GenomicSEM/wiki
+GWAS-by-subtraction: https://rpubs.com/MichelNivard/565885
+
+
+
+For GWAS by subtraction
 #first creat munge files from GWAS outputs
 library ('devtools')
 library ('GenomicSEM')
