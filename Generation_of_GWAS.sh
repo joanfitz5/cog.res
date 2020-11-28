@@ -26,7 +26,7 @@
   --pheno EY50.shuf1.txt
 
 # To compare EY GWAS and RT GWAS with EY+Res and EY/NonRes I needed a pheno file of the same size 
-To prepare EY GWAS creat high low EY pheno file and reduce by 50 % uisng awk, shuf (to ensure random selection) and head -82000.
+# To prepare EY GWAS creat high low EY pheno file and reduce by 50 % uisng awk, shuf (to ensure random selection) and head -82000.
 # All GWAS outputs were trimmed for further analysis to SNP CHR POS MAF A2 A1 Beta SE stat P
 
 EY/NonRes -> all.var.txt
