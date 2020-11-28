@@ -1,4 +1,4 @@
-Reference: https://ctg.cncr.nl/software/magma
+# Reference: https://ctg.cncr.nl/software/magma
 
 # I use MAGMA to perfrom conditional analysis on gene sets for gene onthology terms for biological pathways
 # I used the raw gene file and the set data supplied in the FUMA output as inputs for the MAGMA analysis
