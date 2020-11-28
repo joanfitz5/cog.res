@@ -1,7 +1,7 @@
-Reference: 
 
-# to examine generatic correlations between my diffenrent GWAS and exteral traits , I created munge files for each parameter to be examined -x.sumstats.gz and performed LDSC in 
-# genomicSEM.
+
+# to examine generatic correlations between my diffenrent GWAS and exteral traits , I created munge files for each parameter to be examined -x.sumstats.gz 
+# performed LDSC in genomicSEM.
 
 library ('devtools')
 library ('GenomicSEM')
