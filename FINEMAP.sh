@@ -1,9 +1,5 @@
 # go to Benner http://www.christianbenner.com for method
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
+
 
 #Step 1 create a LD and z files for each locus
 #6f.z was created from list of candidated GWAS SNPs in FUMA pertaining to chr 6. 
@@ -36,7 +32,7 @@ z;ld;snp;config;cred;n_samples
 
 # first two files are input files 6f.z and 6f.ld. Other files are output files
 
-Step 3: perform fine mapping
+# Step 3: perform fine mapping
 
 ./finemap_v1.4_x86_64 --sss --n-causal-snps 3 --in-files master6f ( to specify only 3 snps)
 
