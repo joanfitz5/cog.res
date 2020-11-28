@@ -1,6 +1,6 @@
-Reference: 
-GWAS-by-subtraction: https://rpubs.com/MichelNivard/565885
-GBS N effective calculation: https://github.com/PerlineDemange/non-cognitive/blob/master/GenomicSEM/Cholesky%20model/Calculation_samplesize
+# Reference: 
+# GWAS-by-subtraction: https://rpubs.com/MichelNivard/565885
+# GBS N effective calculation: https://github.com/PerlineDemange/non-cognitive/blob/master/GenomicSEM/Cholesky%20model/Calculation_samplesize
 
 
 # to calculate sample size I needed to find the model loadings. To do this I need to exclude the SNP effects from the model. 
@@ -32,7 +32,7 @@ output<-usermodel(LDSCoutput,estimation="DWLS",model=model)
 saveRDS(output, file="model" )
 
 
-example output 
+# example output 
 > readRDS(file = "model")
 $modelfit
    chisq df p_chisq AIC CFI SRMR
@@ -53,7 +53,7 @@ $results
 5 1.0000000                  <NA>
 
 # the model loadings vary depending on sample size so it is necessary to calculate it for all, test and replication ( Full, Exploration & Replication)
-# To determine effective N it is nessaary to trim my input data in linux using awk to to only include SNPs with maf > 0.1 and < 0.4.
+# To determine effective N it is nessaary to trim my input data in linux using awk to only include SNPs with maf > 0.1 and < 0.4.
 # Full sample resilience was saved as N2.all.res.txt
 # I processed the Neffective calculation in R as follows:
  > library (data.table)
