@@ -93,7 +93,7 @@ write.table(outputGWAS, file=paste("all.",args[3],".out",sep=""), row.names=F,qu
 # output was 22 files for all, test and replic - all.1.txt to all.22.txt. These were joined using cat as follows:
 
 cat all.* >all.txt
-The files were then sorted using awk and print into all.res.txt and all.var.txt for further analysis
+# The files were then sorted using awk and print into all.res.txt and all.var.txt for further analysis
 
 # for RV read EY+Res and for V read EY/NonRes
 # for res read Resilience and for var read EduYears
