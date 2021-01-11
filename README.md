@@ -2,12 +2,16 @@ Identification of 13 independent genetic loci associated with cognitive resilien
 
 Code used to create the GWAS-by-subtraction of Resilience , and for follow-up analyses.
 
-1. Generation of initial GWAS of EY + Res and EY/NonRES and EY and RT for futher analysis
-2. Code for GWAS-by-Subtration 
+1. Generation of initial GWAS of EY + Res and EY/NonRES and EY and RT for futher analysis (Generation_of_GWAS.sh)
+2. Code for GWAS-by-Subtration (GWAS-by-subtraction.sh)
 3. Calculation of sample size after GWAS-by-Subtration
-4. Conditional analysis
+4. Conditional analysis 
 5. FINMAP
-6. Creaction of 
+6. Drawing Venn diagram
+7. Magma analysi
+8. LD score regression analysis
+9. 
+
 # for RV read EY+Res and for V read EY/NonRes
 # for res read Resilience and for var read EduYears
 # analysis repeated for all, test and replic GWAS 
