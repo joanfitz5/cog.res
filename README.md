@@ -12,6 +12,6 @@ Code used to create the GWAS-by-subtraction of Resilience , and for follow-up an
 8. LD score regression analysis
 9. Generalised Summary statistics-based Mendelian Randomisation (GSMR.sh)
 
-During the cousr of this analysis the terms used for the inputs and outputs changed
-for RV read EY+Res and for V read EY/NonRes for res read Resilience 
-for var read EduYears analysis
+During the couse of this analysis the terms used for the inputs and outputs to GWAS-by-Subtraction changed as follows:
+for RV read EY+Res and for V read EY/NonRes
+for res read Resilience and for var read EduYears analysis
