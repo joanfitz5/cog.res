@@ -10,8 +10,8 @@ Code used to create the GWAS-by-subtraction of Resilience , and for follow-up an
 6. Drawing Venn diagram
 7. Magma analysi
 8. LD score regression analysis
-9. 
+9. Generalised Summary statistics-based Mendelian Randomisation (GSMR.sh)
 
-# for RV read EY+Res and for V read EY/NonRes
-# for res read Resilience and for var read EduYears
-# analysis repeated for all, test and replic GWAS 
+During the cousr of this analysis the terms used for the inputs and outputs changed
+for RV read EY+Res and for V read EY/NonRes for res read Resilience 
+for var read EduYears analysis
