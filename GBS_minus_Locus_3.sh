@@ -6,6 +6,6 @@
  cat 3.txt.low 3.txt.high >new.3.txt
  
  awk '$2 != 3' all.res.txt > all.res.minus3
- cat all.res.minus3 new.3.txt >all.res.minusl3.txt
+ cat all.res.minus3 new.3.txt >all.res.minus3.txt
  
  # gzip the file and export to FUMA
